@@ -22,6 +22,7 @@ import {
 } from "./gqlTypes/ProductsList";
 
 import p1 from "images/collection_products/p1.png";
+import all_bg from "images/collection_products/All_collections.png";
 import p2 from "images/collection_products/p2.png";
 import p3 from "images/collection_products/p3.png";
 import p4 from "images/collection_products/p4.png";
@@ -113,13 +114,13 @@ const Page: React.FC<{
   // function setBcgImg(backgroundImage: ProductsList_categories_edges_node_backgroundImage) {
   //
   // }
-  categories.edges.sort((a, b) => (a.node.name > b.node.name ? 1 : -1));
+  // categories.edges.sort((a, b) => (a.node.name > b.node.name ? 1 : -1));
   const [BgImg, setBcgImg] = useState(
-    categories.edges[0].node.backgroundImage.url
+    null
   );
 
   const [current_collection_name, setcollectionName] = useState(
-    categories.edges[0].node.name
+    'All'
   );
 
   const onClickCollection = (url, name) => {
@@ -232,7 +233,7 @@ const Page: React.FC<{
       {categoriesExist() && (
         <ParallaxBanner
           layers={[
-            { image: BgImg || noPhotoImg, speed: -40 },
+            { image: BgImg || all_bg, speed: -40 },
             // { image: bg_story, speed: -10 },
           ]}
           className="aspect-[2/1] home-page__categories"
@@ -290,7 +291,7 @@ const Page: React.FC<{
                   <div className="home-page__categories__titles">
                     <ul>
                       {categories.edges
-                        // .sort((a, b) => (a.node.name > b.node.name ? 1 : -1))
+                        .sort((a, b) => (a.node.name > b.node.name ? 1 : -1))
                         .map(({ node: category }, index) => (
                           <li key={category.id}>
                             {index % 2 ? (

@@ -50,7 +50,7 @@ export const ProdMainAttrs: React.FC<IProps> = ({ attributes }: IProps) => {
 
       {attributes &&
         attributes
-          .filter(_attr => _attr.attribute.name.includes(attrs.content))
+          .filter(_attr => _attr.attribute.name.includes(attrs.persona))
           .map((attribute, index) => (
             <div key={index}>
               <p className="product-page__product__attrlist">
