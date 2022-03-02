@@ -1,0 +1,59 @@
+@import "../../../globalStyles/scss/variables.scss";
+
+.product-list-item {
+  text-align: center;
+
+  &__title {
+    //text-transform: $product-item-title-text-transform;
+    font-weight: $product-item-title-font-weight;
+    margin-top: $spacer;
+    text-align: center;
+    font-family: CardinalFruitRegular, serif;
+    color: $black;
+    font-size: $h3-font-size;
+
+    span{
+      font-family: CardinalFruitMediumItalic, serif;
+
+    }
+
+  }
+
+  &__undiscounted_price {
+    text-decoration: line-through;
+    color: $black;
+    font-size: $small-font-size;
+  }
+
+  &__category {
+    margin-top: 1rem;
+    color: $black;
+    text-align: center;
+    font-family: CardinalFruitItalic, serif;
+    font-size: $h3-font-size;
+
+  }
+
+  &__price {
+    font-weight: $product-item-price-font-weight;
+    margin: $product-item-price-margin;
+    text-align: center;
+    color: $black;
+  }
+
+  &__image {
+    //background-color: $turquoise-light;
+    display: flex;
+    height: 300px;
+    justify-content: center;
+
+    img {
+      object-fit: contain;
+      max-width: 100%;
+    }
+
+    @media (max-width: $small-screen) {
+      height: 210px;
+    }
+  }
+}

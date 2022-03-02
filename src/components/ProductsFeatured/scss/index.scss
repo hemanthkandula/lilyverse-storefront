@@ -1,0 +1,53 @@
+@import "../../../globalStyles/scss/variables.scss";
+
+.products-featured {
+  padding: 2rem 0 4rem;
+  text-align: center;
+  background-color: $white;
+  height: 100vh;
+
+  &__button{
+    //text-transform: $product-item-title-text-transform;
+    text-align: center;
+    font-family: CardinalFruitRegular, serif;
+    font-size: $h4-font-size;
+    color: $black;
+    border-color: $black;
+
+    span {
+       color: $black;
+
+    }
+  }
+  h3 {
+    //font-weight: $bold-font-weight;
+    margin-bottom: $spacer * 5;
+    margin-top: $spacer * 5;
+    width: 100%;
+    color: $black;
+  }
+
+  &_reg {
+    font-family: CardinalFruitRegular, serif;
+    //font-weight: 900;
+    font-size: $h1-font-size;
+    color: $black;
+
+
+  }
+
+  &_italic{
+    font-family: CardinalFruitItalic, serif;
+    //font-weight: 900;
+    font-size: $h1-font-size;
+    color: $black;
+
+  }
+
+  a {
+    color: $base-font-color;
+    display: inline-block;
+    max-width: 255px;
+    text-decoration: none;
+  }
+}
