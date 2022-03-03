@@ -10,7 +10,7 @@ import { commonMessages } from "@temp/intl";
 import { useAuth, useCart, useCheckout } from "@saleor/sdk";
 
 import {
-  Button,
+
   Offline,
   OfflinePlaceholder,
   Online,
@@ -24,6 +24,37 @@ import ProductList from "./ProductList";
 
 import cartImg from "../../../images/cart.svg";
 import closeImg from "../../../images/x.svg";
+import {Button, Theme, withStyles} from "@material-ui/core";
+import {purple} from "@material-ui/core/colors";
+const MainButtonO = withStyles((theme: Theme) => ({
+  root: {
+    // backgroundColor: "black",
+    fontFamily: "HelveticaNeue",
+    color:"black",
+    borderRadius: 0,
+    textTransform: "none",
+    paddingRight: "4rem",
+    paddingLeft: "4rem",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
+    fontSize: "small",
+    marginTop: "1rem",
+  },
+}))(Button);
+const MainButtonB = withStyles((theme: Theme) => ({
+  root: {
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: "black",
+    fontFamily: "HelveticaNeue",
+    borderRadius: 0,
+    textTransform: "none",
+    paddingRight: "4rem",
+    paddingLeft: "4rem",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
+    fontSize: "small",
+  },
+}))(Button);
 
 const Cart: React.FC<{ overlay: OverlayContextInterface }> = ({ overlay }) => {
   const { user } = useAuth();
@@ -147,16 +178,23 @@ const Cart: React.FC<{ overlay: OverlayContextInterface }> = ({ overlay }) => {
                           token: null,
                         })}
                       >
-                        <Button testingContext="gotoBagViewButton" secondary>
+                        <MainButtonO variant="outlined" size="large">
                           <FormattedMessage defaultMessage="Go to my bag" />
-                        </Button>
+                        </MainButtonO>
                       </Link>
                     </div>
                     <div className="cart__footer__button">
                       <Link to={user ? checkoutUrl : checkoutLoginUrl}>
-                        <Button testingContext="gotoCheckoutButton">
-                          <FormattedMessage {...commonMessages.checkout} />
-                        </Button>
+                        {/*<Button testingContext="gotoCheckoutButton">*/}
+                        {/*  <FormattedMessage {...commonMessages.checkout} />*/}
+                        {/*</Button>*/}
+                        <MainButtonB
+                            variant="contained"
+                            size="large"
+                        >
+                            <FormattedMessage {...commonMessages.checkout} />
+                        </MainButtonB>
+
                       </Link>
                     </div>
                   </div>

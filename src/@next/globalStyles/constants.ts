@@ -13,6 +13,7 @@ export const blueOverlayDark = `rgba(33,18,94,0.2)`;
 export const gray = "#7d7d7d";
 export const grayMedium = "#c4c4c4";
 export const grayDark = "#323232";
+// export const grayLight = "#f1f5f5";
 export const grayLight = "#f1f5f5";
 export const green = "#3ed256";
 export const overlayColor = "rgba(199, 207, 207, 0.8)";
@@ -27,7 +28,8 @@ export const darkGreen = "#06847B";
 export const secondaryGrey = "#EBF1F6";
 export const secondaryGreyDark = "#9D9FB1";
 export const secondaryBlue = "#036DFF";
-export const lv_grey = "#9d9996"
+export const lv_grey = "#9d9996";
+export const bblack = "#000000";
 
 // theme colors
 export const theme = {
@@ -46,8 +48,8 @@ export const theme = {
   dividerDark: grayMedium,
   error: rose,
   hoverLightBackground: turquoiseLight,
-  light: grayLight,
-  lightFont: gray,
+  darkbg: bblack,
+  lightFont: white,
   listAttributeName: baseFontColorSemiTransparent,
   listBullet: darkGreen,
   overlay: overlayColor,

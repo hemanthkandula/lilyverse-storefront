@@ -10,16 +10,7 @@ import { ProductFeatured } from "src/components/ProductFeatured";
 
 import * as S from "@temp/components/ProductFeatured/styles";
 
-import { ProductsFeatured } from "../../components";
-import { structuredData } from "../../core/SEO/Homepage/structuredData";
 // import { generateCategoryUrl } from "../../core/utils";
-import noPhotoImg from "../../images/no-photo.svg";
-import homeVideo from "../../videos/homevideo.mp4";
-import {
-  ProductsList_categories,
-  ProductsList_shop,
-  ProductsList_shop_homepageCollection_backgroundImage,
-} from "./gqlTypes/ProductsList";
 
 import p1 from "images/collection_products/p1.png";
 import all_bg from "images/collection_products/All_collections.png";
@@ -30,8 +21,18 @@ import p5 from "images/collection_products/p5.png";
 import p6 from "images/collection_products/p6.png";
 import p7 from "images/collection_products/p7.png";
 import p8 from "images/collection_products/p8.png";
+import {
+  ProductsList_categories,
+  ProductsList_shop,
+  ProductsList_shop_homepageCollection_backgroundImage,
+} from "./gqlTypes/ProductsList";
+import homeVideo from "../../videos/homevideo.mp4";
+// import noPhotoImg from "../../images/no-photo.svg";
+import { structuredData } from "../../core/SEO/Homepage/structuredData";
+import { ProductsFeatured } from "../../components";
 
 import "./scss/index.scss";
+// import { AttributeHomeButton } from "@temp/components/ProductFeatured/styles";
 
 const attrImages = new Map([
   ["All", p1],
@@ -69,7 +70,7 @@ const MainButton = withStyles((theme: Theme) => ({
     fontFamily: "Helvetica Neue",
     borderRadius: 0,
     textTransform: "none",
-    paddingRight: "3rem",
+    paddingRight: "4rem",
     paddingLeft: "4rem",
     paddingTop: "1rem",
     paddingBottom: "1rem",
@@ -115,13 +116,9 @@ const Page: React.FC<{
   //
   // }
   // categories.edges.sort((a, b) => (a.node.name > b.node.name ? 1 : -1));
-  const [BgImg, setBcgImg] = useState(
-    null
-  );
+  const [BgImg, setBcgImg] = useState(null);
 
-  const [current_collection_name, setcollectionName] = useState(
-    'All'
-  );
+  const [current_collection_name, setcollectionName] = useState("All");
 
   const onClickCollection = (url, name) => {
     setBcgImg(url);
@@ -186,7 +183,7 @@ const Page: React.FC<{
             color="inherit"
             className="home-page__hero__center_button"
           >
-            Our Philosophy
+            <S.AttributeHomeButton>Our Philosophy</S.AttributeHomeButton>
           </MainButton>
         </div>
 
@@ -361,11 +358,8 @@ const Page: React.FC<{
           className="home-page__quiz__button"
           color="inherit"
           endIcon={<NavigateNextIcon />}
-
         >
-          <S.AttributeButton>
-            Start the quiz
-          </S.AttributeButton>
+          <S.AttributeButton>Start the quiz</S.AttributeButton>
         </MainButton>
       </div>
     </>

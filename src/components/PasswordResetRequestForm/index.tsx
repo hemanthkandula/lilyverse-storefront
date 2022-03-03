@@ -4,7 +4,9 @@ import * as React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { commonMessages } from "@temp/intl";
 
-import { Button, Form, TextField } from "..";
+import { Button, Theme, withStyles } from "@material-ui/core";
+import { purple } from "@material-ui/core/colors";
+import { Form, TextField } from "..";
 import { TypedPasswordResetRequestMutation } from "./queries";
 
 import { passwordResetUrl } from "../../app/routes";
@@ -25,7 +27,21 @@ const PasswordResetRequestForm: React.FC = () => {
     }
     return intl.formatMessage({ defaultMessage: "Reset password" });
   };
-
+  const MainButton = withStyles((theme: Theme) => ({
+    root: {
+      color: theme.palette.getContrastText(purple[500]),
+      backgroundColor: "black",
+      fontFamily: "HelveticaNeue",
+      borderRadius: 0,
+      textTransform: "none",
+      paddingRight: "4rem",
+      paddingLeft: "4rem",
+      paddingTop: "1rem",
+      paddingBottom: "1rem",
+      fontSize: "small",
+      marginTop: "1rem",
+    },
+  }))(Button);
   return (
     <div className="password-reset-form">
       <p>
@@ -54,13 +70,22 @@ const PasswordResetRequestForm: React.FC = () => {
                 required
               />
               <div className="password-reset-form__button">
-                <Button
-                  testingContext="submit"
+                {/* <Button */}
+                {/*  testingContext="submit" */}
+                {/*  type="submit" */}
+                {/*  {...(disableSubmit(loading, data) && { disabled: true })} */}
+                {/* > */}
+                {/*  {buttonMessage(loading, data)} */}
+                {/* </Button> */}
+                <MainButton
+                  variant="contained"
+                  size="large"
+                  className="cart__empty__button"
                   type="submit"
                   {...(disableSubmit(loading, data) && { disabled: true })}
                 >
-                  {buttonMessage(loading, data)}
-                </Button>
+                  <span>{buttonMessage(loading, data)}</span>
+                </MainButton>
               </div>
             </Form>
           );

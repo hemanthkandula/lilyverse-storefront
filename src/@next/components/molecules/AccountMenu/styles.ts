@@ -1,7 +1,7 @@
 import { styled } from "@styles";
 
 export const Wrapper = styled.div`
-  background-color: ${props => props.theme.colors.light};
+  background-color: ${props => props.theme.colors.darkbg};
   height: 100%;
   /* height: auto; */
   padding-left: 3rem;

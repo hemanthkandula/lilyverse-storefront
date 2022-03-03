@@ -15,7 +15,7 @@ export const Title = styled.h3`
 `;
 
 export const DiscountField = styled.div`
-  background-color: ${props => props.theme.colors.light};
+  background-color: ${props => props.theme.colors.darkbg};
   padding: 30px;
 
   ${media.smallScreen`
@@ -25,7 +25,7 @@ export const DiscountField = styled.div`
 
 export const Tile = styled.label<{ checked: boolean }>`
   display: block;
-  background-color: ${props => props.theme.colors.light};
+  background-color: ${props => props.theme.colors.darkbg};
   padding: 20px;
   ${props => props.checked && `border: 2px solid #21125E;`}
   font-size: ${props => props.theme.typography.smallFontSize};

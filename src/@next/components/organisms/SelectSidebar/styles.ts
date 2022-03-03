@@ -16,7 +16,7 @@ export const Content = styled.div`
 `;
 
 export const Footer = styled.div`
-  background-color: ${props => props.theme.colors.light};
+  background-color: ${props => props.theme.colors.darkbg};
   padding: ${({ theme: { spacing } }) =>
     `1.3rem ${spacing.gutter} 1rem ${spacing.gutter}`};
 `;

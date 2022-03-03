@@ -7,7 +7,7 @@
   background-color: black;
 }
 .home-page {
-  z-index: 100;
+  z-index: 2;
   background-color: black;
 
 
@@ -350,7 +350,7 @@
         margin-bottom: 1rem;
 
         &--no-photo {
-          background-color: $turquoise-light;
+          background-color: $black;
           background-repeat: no-repeat;
           background-size: contain;
         }

@@ -92,7 +92,7 @@ describe("<FormFooter />", () => {
 
     expect(formFooter).toHaveStyleRule(
       "border-top",
-      `1px solid ${defaultTheme.colors.light}`
+      `1px solid ${defaultTheme.colors.darkbg}`
     );
   });
 });

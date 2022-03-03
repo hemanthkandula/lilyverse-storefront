@@ -36,7 +36,7 @@ const TextField: React.FC<TextFieldProps> = ({
   iconRight,
   errors,
   helpText,
-  styleType = "white" as Style,
+  styleType = "grey" as Style,
   ...rest
 }) => (
   <div className="input">

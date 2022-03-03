@@ -44,12 +44,14 @@ const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
         if (products.length) {
           return (
             <div className="products-featured">
+              {/*<h3>*/}
+              {/*  <span className="products-featured_italic"> Our </span>*/}
+              {/*  <span className="products-featured_reg"> Best </span>*/}
+              {/*  <span className="products-featured_italic"> Seller </span>*/}
+              {/*</h3>*/}
               <h3>
-                <span className="products-featured_italic"> Our </span>
-                <span className="products-featured_reg"> Best </span>
-                <span className="products-featured_italic"> Seller </span>
+                <span className="products-featured_italic"> {title} </span>
               </h3>
-
               <div className="container">
                 <Carousel>
                   {products.map(({ node: product }) => (

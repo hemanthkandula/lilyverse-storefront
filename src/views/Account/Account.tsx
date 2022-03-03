@@ -56,7 +56,7 @@ const Account: React.FC<RouteComponentProps> = ({ history, match }) => {
   }
 
   return (
-    <div className="container">
+    <div className="account">
       <Breadcrumbs
         breadcrumbs={[
           {

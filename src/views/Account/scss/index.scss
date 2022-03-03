@@ -5,7 +5,8 @@
   flex-wrap: nowrap;
   align-items: stretch;
   margin-bottom: 2rem;
-
+  padding-top: 3.55rem;
+  background-color: $black;
   @media screen and (max-width: $small-screen) {
     flex-direction: column;
   }
@@ -13,9 +14,14 @@
   &__menu {
     width: 360px;
     margin-right: 2rem;
+    background-color: $black;
+
+
   }
 
   &__content {
     width: 100%;
+    background-color: $black;
+
   }
 }

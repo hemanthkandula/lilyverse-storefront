@@ -7,7 +7,26 @@ import { useAuth } from "@saleor/sdk";
 import { demoMode } from "@temp/constants";
 import { commonMessages } from "@temp/intl";
 
-import { Button, Form, TextField } from "..";
+import { Button, Theme, withStyles } from "@material-ui/core";
+import { purple } from "@material-ui/core/colors";
+import { Form, TextField } from "..";
+
+const MainButton = withStyles((theme: Theme) => ({
+  root: {
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: "black",
+
+    fontFamily: "HelveticaNeue",
+    borderRadius: 0,
+    textTransform: "none",
+    paddingRight: "4rem",
+    paddingLeft: "4rem",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
+    fontSize: "small",
+    marginTop: "1rem",
+  },
+}))(Button);
 
 interface ILoginForm {
   hide?: () => void;
@@ -48,6 +67,7 @@ const LoginForm: React.FC<ILoginForm> = ({ hide }) => {
           autoComplete="email"
           label={intl.formatMessage(commonMessages.eMail)}
           type="email"
+          styleType={"grey"}
           required
         />
         <TextField
@@ -58,15 +78,30 @@ const LoginForm: React.FC<ILoginForm> = ({ hide }) => {
           required
         />
         <div className="login-form__button">
-          <Button
-            testingContext="submit"
-            type="submit"
+          {/* <Button */}
+          {/*  testingContext="submit" */}
+          {/*  type="submit" */}
+          {/*  {...(loading && { disabled: true })} */}
+          {/* > */}
+          {/*  {loading */}
+          {/*    ? intl.formatMessage(commonMessages.loading) */}
+          {/*    : intl.formatMessage({ defaultMessage: "Sign in" })} */}
+          {/* </Button> */}
+
+          <MainButton
+            variant="contained"
+            size="large"
+            className="cart__empty__button"
             {...(loading && { disabled: true })}
+            type="submit"
           >
-            {loading
-              ? intl.formatMessage(commonMessages.loading)
-              : intl.formatMessage({ defaultMessage: "Sign in" })}
-          </Button>
+            <span>
+              {" "}
+              {loading
+                ? intl.formatMessage(commonMessages.loading)
+                : intl.formatMessage({ defaultMessage: "Sign in" })}
+            </span>
+          </MainButton>
         </div>
       </Form>
     </div>

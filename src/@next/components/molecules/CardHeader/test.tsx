@@ -83,7 +83,7 @@ describe("<CardHeader />", () => {
 
     expect(header).toHaveStyleRule(
       "border-bottom",
-      `1px solid ${defaultTheme.colors.light}`
+      `1px solid ${defaultTheme.colors.darkbg}`
     );
   });
 });

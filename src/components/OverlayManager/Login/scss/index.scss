@@ -2,7 +2,11 @@
 
 .login {
   width: 25rem;
+
   max-width: 100vw;
+  background-color: $white;
+  margin-top: 3.55rem;
+  margin-right: 1rem;
 
   &__tabs {
     display: flex;
@@ -10,12 +14,12 @@
     span {
       flex-grow: 1;
       width: 100%;
-      background-color: $gray-light;
+      background-color: $black;
       text-transform: uppercase;
       font-weight: $bold-font-weight;
       text-align: center;
       padding: $spacer;
-      border-bottom: 1px solid $gray-light;
+      border-bottom: 1px solid $white;
       cursor: pointer;
 
       &:first-of-type {
@@ -27,7 +31,7 @@
       }
 
       &.active-tab {
-        border-bottom: 1px solid $turquoise;
+        border-bottom: 1px solid $white;
       }
     }
   }

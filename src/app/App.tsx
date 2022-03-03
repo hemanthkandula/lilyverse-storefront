@@ -2,8 +2,7 @@ import { useAuth } from "@saleor/sdk";
 import React from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 
-import { DemoBanner, Loader } from "@components/atoms";
-import { demoMode } from "@temp/constants";
+import { Loader } from "@components/atoms";
 
 import {
   Footer,

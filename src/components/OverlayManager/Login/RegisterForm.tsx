@@ -5,13 +5,30 @@ import * as React from "react";
 import { AlertManager, useAlert } from "react-alert";
 import { useIntl, IntlShape } from "react-intl";
 import { commonMessages } from "@temp/intl";
+import { Button, Theme, withStyles } from "@material-ui/core";
+import { purple } from "@material-ui/core/colors";
 import { accountConfirmUrl } from "../../../app/routes";
 
-import { Button, Form, TextField } from "../..";
+import { Form, TextField } from "../..";
 import { maybe } from "../../../core/utils";
 import { RegisterAccount } from "./gqlTypes/RegisterAccount";
 import { TypedAccountRegisterMutation } from "./queries";
 
+const MainButton = withStyles((theme: Theme) => ({
+  root: {
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: "black",
+    fontFamily: "HelveticaNeue",
+    borderRadius: 0,
+    textTransform: "none",
+    paddingRight: "4rem",
+    paddingLeft: "4rem",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
+    fontSize: "small",
+    marginTop: "1rem",
+  },
+}))(Button);
 const showSuccessNotification = (
   data: RegisterAccount,
   hide: () => void,
@@ -69,15 +86,30 @@ const RegisterForm: React.FC<{ hide: () => void }> = ({ hide }) => {
               required
             />
             <div className="login__content__button">
-              <Button
-                testingContext="submitRegisterFormButton"
+              {/* <Button */}
+              {/*  testingContext="submitRegisterFormButton" */}
+              {/*  type="submit" */}
+              {/*  {...(loading && { disabled: true })} */}
+              {/* > */}
+              {/*  {loading */}
+              {/*    ? intl.formatMessage(commonMessages.loading) */}
+              {/*    : intl.formatMessage({ defaultMessage: "Register" })} */}
+              {/* </Button> */}
+
+              <MainButton
+                variant="contained"
+                size="large"
+                className="cart__empty__button"
                 type="submit"
                 {...(loading && { disabled: true })}
               >
-                {loading
-                  ? intl.formatMessage(commonMessages.loading)
-                  : intl.formatMessage({ defaultMessage: "Register" })}
-              </Button>
+                <span>
+                  {" "}
+                  {loading
+                    ? intl.formatMessage(commonMessages.loading)
+                    : intl.formatMessage({ defaultMessage: "Register" })}
+                </span>
+              </MainButton>
             </div>
           </Form>
         );

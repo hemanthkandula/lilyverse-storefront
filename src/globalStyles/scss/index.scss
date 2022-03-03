@@ -52,6 +52,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    color: $base-font-color;
 
     & > div:first-of-type {
       flex: 1;

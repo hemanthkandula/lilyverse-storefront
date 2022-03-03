@@ -4,6 +4,7 @@
   font-size: $label-font-size;
   left: 17px;
   top: 0;
+  color: $black;
 }
 
 .input {
@@ -20,7 +21,7 @@
     border-radius: 0;
     padding: 0.8rem 1rem;
     font-size: $base-font-size;
-    color: $base-font-color;
+    color: $black;
     border: 1px solid $blue;
     outline: none;
     box-shadow: 0 0 0 1px $white;
@@ -30,7 +31,8 @@
     &:not([value=""]) {
       box-shadow: 0 0 0 1px $blue;
       & + .input__label {
-        background-color: $white;
+        color:$black;
+        background-color: $black;
         @include focusedLabel();
       }
     }
@@ -58,7 +60,7 @@
 
     &:not([value=""]) {
       & + .input__label {
-        color: $base-font-color;
+        color: $black;
       }
     }
     &:focus {

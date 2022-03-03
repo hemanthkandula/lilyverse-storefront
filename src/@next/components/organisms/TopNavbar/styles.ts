@@ -67,7 +67,7 @@ export const IconWrapper = styled.button`
 `;
 
 export const SearchButton = styled.button`
-  border-left: 1px solid ${props => props.theme.colors.light};
+  border-left: 1px solid ${props => props.theme.colors.darkbg};
   display: flex;
   height: 100%;
   align-items: center;

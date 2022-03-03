@@ -4,7 +4,7 @@ export const Label = styled.label<{ checked: boolean }>`
   height: 100%;
   min-height: 190px;
   display: block;
-  background-color: ${props => props.theme.colors.light};
+  background-color: ${props => props.theme.colors.darkbg};
   padding: 30px;
   padding: ${props => (props.checked ? `28px` : `30px`)};
   ${props => props.checked && `border: 2px solid #21125E;`}

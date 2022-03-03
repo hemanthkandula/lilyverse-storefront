@@ -68,7 +68,16 @@ export const AttributeButton = styled.span`
   margin-right: ${props => props.theme.spacing.gutter};
   color: ${props => props.theme.colors.white};
 `;
-
+export const AttributeHomeButton = styled.span`
+  color: ${props => props.theme.colors.listAttributeName};
+  font-family: HelveticaNeue Medium, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: ${props => props.theme.typography.h4FontSize};
+  margin-right: ${props => props.theme.spacing.gutter};
+  margin-left: ${props => props.theme.spacing.gutter};
+  color: ${props => props.theme.colors.white};
+`;
 export const AttributeValue = styled.span`
   color: ${props => props.theme.colors.listAttributeName};
   margin: 0;
