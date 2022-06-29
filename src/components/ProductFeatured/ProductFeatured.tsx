@@ -12,7 +12,7 @@ import { generateProductUrl, maybe } from "@temp/core/utils";
 
 import { TypedFeaturedProductQuery } from "./queries";
 import * as S from "./styles";
-
+// import default_img from "../../images/product/defaultproduct.jpg";
 import "./scss/index.scss";
 
 interface ProductsFeaturedProps {
@@ -72,11 +72,20 @@ export const ProductFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
                 </Grid>
                 <Grid item xs={12} sm={4} lg={4}>
                   <div className="product-featured__image">
+                    {/* {products[0].node.thumbnail.url != null ? ( */}
                     <img
                       className="product-featured__image__img"
                       src={products[0].node.thumbnail.url}
+                      // src="../../images/product/defaultproduct.jpg"
                       alt=""
                     />
+                    {/* // ) : ( */}
+                    {/* //   <img */}
+                    {/* //     className="product-featured__image__img" */}
+                    {/* //     src={default_img} */}
+                    {/* //     alt="" */}
+                    {/* //   /> */}
+                    {/* // )} */}
                   </div>
                 </Grid>
                 <Grid item xs={12} sm={4} lg={4}>

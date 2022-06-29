@@ -5,6 +5,10 @@
   text-align: center;
   background-color: $white;
   height: 100vh;
+  &__carouselcontainer{
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
 
   &__button{
     //text-transform: $product-item-title-text-transform;
