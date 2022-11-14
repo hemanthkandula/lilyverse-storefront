@@ -16,6 +16,7 @@ const MenuItemStyles = css`
   text-transform: uppercase;
   transition: 300ms;
   height: ${NAVBAR_HEIGHT};
+  background-color: #000000;
   width: 100%;
   ${({ theme }) => `
     border-bottom: 1px solid ${theme.colors.divider};

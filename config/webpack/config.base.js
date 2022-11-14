@@ -127,7 +127,7 @@ module.exports = ({ sourceDir, distDir }) => ({
       prefix: "images/favicons/",
     }),
     new webpack.EnvironmentPlugin({
-      API_URI: "http://localhost:8000/graphql/",
+      API_URI: "http://api.lilyverse.com:8000/graphql/",
       DEMO_MODE: false,
       GTM_ID: undefined,
       SENTRY_APM: "0",

@@ -476,6 +476,18 @@ export interface ProductDetails_product_images {
   url: string;
 }
 
+export interface ProductDetails_product_backgroundImage {
+  __typename: "Image";
+  /**
+   * Alt text for an image.
+   */
+  alt: string | null;
+  /**
+   * The URL of the image.
+   */
+  url: string;
+}
+
 export interface ProductDetails_product_attributes_attribute {
   __typename: "Attribute";
   /**
@@ -707,11 +719,13 @@ export interface ProductDetails_product {
    */
   pricing: ProductDetails_product_pricing | null;
   descriptionJson: any;
+  storyJson: any;
   category: ProductDetails_product_category | null;
   /**
    * List of images for the product.
    */
   images: (ProductDetails_product_images | null)[] | null;
+  backgroundImage: ProductDetails_product_backgroundImage | null;
   /**
    * List of attributes assigned to this product.
    */

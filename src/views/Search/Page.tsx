@@ -147,6 +147,9 @@ const Page: React.FC<PageProps> = ({
         <ProductsFeatured
           title={intl.formatMessage(commonMessages.youMightLike)}
         />
+        // <ProductFeatured
+        //   title={intl.formatMessage(commonMessages.youMightLike)}
+        // />
       )}
     </div>
   );

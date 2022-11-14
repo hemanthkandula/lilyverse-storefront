@@ -1,5 +1,4 @@
 import { styled } from "@styles";
-
 export const Wrapper = styled.div`
   background-color: ${props => props.theme.colors.darkbg};
   padding: 1.25rem;
@@ -21,7 +20,7 @@ export const Overlay = styled.div`
   /* height: 350px; */
   overflow: visible;
   z-index: 10;
-  background-color: white;
+  background-color: black;
   box-shadow: 0 0 0 9999px rgba(50, 50, 50, 0.1);
 `;
 

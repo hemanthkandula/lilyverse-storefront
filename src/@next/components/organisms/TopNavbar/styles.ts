@@ -5,7 +5,7 @@ export const NAVBAR_HEIGHT = "3.55rem";
 
 export const Wrapper = styled.div`
   background-color: ${props => props.theme.colors.white};
-  border-bottom: 1px solid ${props => props.theme.colors.light};
+  border-bottom: 1px solid ${props => props.theme.colors.dark};
   display: flex;
   justify-content: space-between;
   height: ${NAVBAR_HEIGHT};

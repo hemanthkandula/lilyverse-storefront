@@ -17,7 +17,7 @@ import { ParallaxBanner } from "react-scroll-parallax";
 //     value: product.name,
 //   },
 // ];
-import bg_story from "src/images/para_bg.png";
+// import bg_story from "src/images/para_bg.png";
 
 // import vd_home from "src/videos/HomeVideo";
 import { ProdDesc } from "@components/molecules/ProdDesc";
@@ -99,7 +99,7 @@ const Page: React.FC<
       name={product.name}
     />
   );
-  const prodStory = <ProdStory descriptionJson={product.descriptionJson} />;
+  const prodStory = <ProdStory descriptionJson={product.storyJson} />;
   const prodMainAttrs = <ProdMainAttrs attributes={product.attributes} />;
   const prodSubAttrs = <ProdSubAttrs attributes={product.attributes} />;
 
@@ -139,7 +139,7 @@ const Page: React.FC<
 
       <ParallaxBanner
         layers={[
-          { image: bg_story, speed: -40 },
+          { image: product.backgroundImage.url, speed: -40 },
           // { image: bg_story, speed: -10 },
         ]}
         className="aspect-[2/1] product-page__product__story_element"

@@ -1,6 +1,7 @@
 import baseStyled, { ThemedStyledInterface } from "styled-components";
 
 import * as C from "./constants";
+// import {grayLight} from "./constants";
 
 export const defaultTheme = {
   breakpoints: {
@@ -102,12 +103,12 @@ export const defaultTheme = {
   },
   link: {
     base: {
-      color: C.gray,
+      color: C.white,
       hoverColor: C.grayMedium,
     },
     secondary: {
-      color: C.blue,
-      hoverColor: C.blueLight,
+      color: C.white,
+      hoverColor: C.grayMedium,
     },
   },
   message: {

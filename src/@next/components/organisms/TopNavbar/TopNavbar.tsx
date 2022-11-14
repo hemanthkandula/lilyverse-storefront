@@ -9,9 +9,11 @@ import { Icon, NavLink } from "@components/atoms";
 import { largeScreen, smallScreen } from "@styles/constants";
 import { maybe } from "@utils/misc";
 
-import LogoSmall from "images/logo-small.svg";
-import Logo from "images/logo.svg";
+// import LogoSmall from "images/logo-small.svg";
+// import Logo from "images/logo.svg";
 
+import { Link } from "react-router-dom";
+import * as appPaths from "@temp/app/routes";
 import { Dropdown } from "./Dropdown";
 import * as S from "./styles";
 import { IProps } from "./types";
@@ -112,10 +114,24 @@ export const TopNavbar: React.FC<IProps> = ({ items }: IProps) => {
         </S.Navigation>
         <S.Center>
           <Media maxWidth={smallScreen}>
-            <S.LogoWrapper path={LogoSmall} />
+            {/* <S.LogoWrapper path={LogoSmall} /> */}
+            <div className="main-menu__center">
+              <Link to={appPaths.baseUrl}>
+                {/* <ReactSVG path={logoImg}  /> */}
+                {/* <img src={logoImg} alt="logo" /> */}
+                <span className="main-menu__center_reg">Lilyverse</span>
+              </Link>
+            </div>
           </Media>
           <Media minWidth={smallScreen}>
-            <S.LogoWrapper path={Logo} />
+            {/* <S.LogoWrapper path={Logo} /> */}
+            <div className="main-menu__center">
+              <Link to={appPaths.baseUrl}>
+                {/* <ReactSVG path={logoImg}  /> */}
+                {/* <img src={logoImg} alt="logo" /> */}
+                <span className="main-menu__center_reg">Lilyverse</span>
+              </Link>
+            </div>
           </Media>
         </S.Center>
         <S.Actions>

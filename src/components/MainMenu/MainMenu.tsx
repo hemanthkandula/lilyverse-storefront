@@ -24,7 +24,7 @@ import {
   OverlayTheme,
   OverlayType,
 } from "..";
-import NavDropdown from "./NavDropdown";
+// import NavDropdown from "./NavDropdown";
 import { TypedMainMenuQuery } from "./queries";
 
 import "./scss/index.scss";

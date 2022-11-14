@@ -3,6 +3,7 @@ export const baseUrl = "/";
 export const searchUrl = `${baseUrl}search/`;
 export const categoryUrl = `${baseUrl}category/${slugUrl}`;
 export const collectionUrl = `${baseUrl}collection/${slugUrl}`;
+export const collectionsUrl = `${baseUrl}collections/`;
 export const productUrl = `${baseUrl}product/${slugUrl}`;
 export const cartUrl = `${baseUrl}cart/:token?/`;
 export const checkoutLoginUrl = `${baseUrl}login/`;

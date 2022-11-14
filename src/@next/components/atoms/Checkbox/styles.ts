@@ -30,7 +30,7 @@ export const Label = styled.label`
     width: 26px;
 
     span {
-      border: 1px solid ${props => props.theme.colors.secondary};
+      border: 1px solid ${props => props.theme.colors.white};
       width: 14px;
       height: 14px;
       display: inline-block;
@@ -56,7 +56,7 @@ export const Label = styled.label`
     span {
       background-clip: content-box;
       padding: 2px;
-      background-color: ${props => props.theme.colors.secondary};
+      background-color: ${props => props.theme.colors.white};
     }
   }
 `;

@@ -5,6 +5,10 @@ import { useIntl } from "react-intl";
 
 import { commonMessages } from "@temp/intl";
 import { IFilterAttributes, IFilters } from "@types";
+import { ParallaxBanner } from "react-scroll-parallax";
+import all_bg from "images/collection_products/All_collections.png";
+import { Grid } from "@material-ui/core";
+import { useState } from "react";
 import {
   Breadcrumbs,
   extractBreadcrumbs,
@@ -19,6 +23,8 @@ import { maybe } from "../../core/utils";
 
 import { Category_category } from "./gqlTypes/Category";
 import { CategoryProducts_products } from "./gqlTypes/CategoryProducts";
+// import {ProductsList_categories} from "@temp/views/Home/gqlTypes/ProductsList";
+import { CategoryList_categories } from "./gqlTypes/CategoryList";
 
 interface SortItem {
   label: string;
@@ -28,6 +34,7 @@ interface SortItem {
 interface SortOptions extends Array<SortItem> {}
 
 interface PageProps {
+  categories: CategoryList_categories;
   activeFilters: number;
   attributes: IFilterAttributes[];
   activeSortOption: string;
@@ -45,6 +52,7 @@ interface PageProps {
 
 const Page: React.FC<PageProps> = ({
   activeFilters,
+  categories,
   activeSortOption,
   attributes,
   category,
@@ -58,6 +66,10 @@ const Page: React.FC<PageProps> = ({
   sortOptions,
   onAttributeFiltersChange,
 }) => {
+  const categoriesExist = () => {
+    return categories && categories.edges && categories.edges.length > 0;
+  };
+
   const canDisplayProducts = maybe(
     () => !!products.edges && products.totalCount !== undefined
   );
@@ -85,9 +97,94 @@ const Page: React.FC<PageProps> = ({
         ),
       []
     );
+  const [BgImg, setBcgImg] = useState(null);
+  const [collectionName, setcollectionName] = useState("All");
+  const onClickCollection = (url, name) => {
+    setBcgImg(url);
+    setcollectionName(name);
+  };
+  const [navbar, setNavbar] = useState(false);
 
+  const chnagebg = () => {
+    if (window.scrollY >= window.innerHeight * 0.2) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  window.addEventListener("scroll", chnagebg);
   return (
     <div className="category">
+      <nav
+        className={navbar ? "category__header active" : "category__header"}>
+        {categoriesExist() && (
+          <ParallaxBanner
+            layers={[
+              { image: BgImg || all_bg, speed: -40 },
+              // { image: bg_story, speed: -10 },
+            ]}
+            className="aspect-[2/1] category__categories"
+          >
+            <Grid
+              className="category__categories__content"
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="flex-end"
+            >
+              <Grid item xs={12} sm={12} lg={12}>
+                <div className="category__categories__head">
+                  {collectionName}
+                </div>
+              </Grid>
+              <Grid item xs={12} sm={12} lg={12}>
+                <div className="category__categories__tabs">
+                  <div className="category__categories__titles">
+                    <ul>
+                      {categories.edges
+                        .sort((a, b) => (a.node.name > b.node.name ? 1 : -1))
+                        .map(({ node: category }, index) => (
+                          <li key={category.id}>
+                            {index % 2 ? (
+                              // eslint-disable-next-line jsx-a11y/anchor-is-valid
+                              <a
+                                className="category__categories__titles_reg"
+                                key={category.id}
+                                onClick={() =>
+                                  // setBcgImg(category.backgroundImage.url)
+                                  onClickCollection(
+                                    category.backgroundImage.url,
+                                    category.name
+                                  )
+                                }
+                              >
+                                {category.name}
+                              </a>
+                            ) : (
+                              // eslint-disable-next-line jsx-a11y/anchor-is-valid
+                              <a
+                                className="category__categories__titles_italic"
+                                key={category.id}
+                                onClick={() =>
+                                  onClickCollection(
+                                    category.backgroundImage.url,
+                                    category.name
+                                  )
+                                }
+                              >
+                                {category.name}
+                              </a>
+                            )}
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                </div>
+              </Grid>
+            </Grid>
+          </ParallaxBanner>
+        )}
+      </nav>
       <div className="container">
         <Breadcrumbs breadcrumbs={extractBreadcrumbs(category)} />
         <FilterSidebar

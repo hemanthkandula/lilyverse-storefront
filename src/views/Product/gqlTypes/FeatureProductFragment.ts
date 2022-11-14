@@ -78,6 +78,7 @@ export interface FeatureProductFragment {
   id: string;
   name: string;
   descriptionJson: any;
+  storyJson: any;
   /**
    * The main thumbnail for a product.
    */

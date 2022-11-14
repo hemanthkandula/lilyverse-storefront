@@ -6,6 +6,7 @@ import { prodListHeaderCommonMsg } from "@temp/intl";
 import { IFilters } from "@types";
 import { StringParam, useQueryParam } from "use-query-params";
 import { Loader } from "@components/atoms";
+// import { TypedHomePageQuery } from "@temp/views/Home/queries";
 import { MetaWrapper, NotFound, OfflinePlaceholder } from "../../components";
 import NetworkStatus from "../../components/NetworkStatus";
 import { PRODUCTS_PER_PAGE } from "../../core/config";
@@ -18,6 +19,7 @@ import Page from "./Page";
 import {
   TypedCategoryProductsQuery,
   TypedCategoryProductsDataQuery,
+  TypedCategoryPageQuery,
 } from "./queries";
 
 type ViewProps = RouteComponentProps<{
@@ -186,41 +188,52 @@ export const View: React.FC<ViewProps> = ({ match }) => {
                       );
 
                     return (
-                      <MetaWrapper
-                        meta={{
-                          description:
-                            categoryData.data.category.seoDescription,
-                          title: categoryData.data.category.seoTitle,
-                          type: "product.category",
-                        }}
+                      <TypedCategoryPageQuery
+                        alwaysRender
+                        displayLoader={false}
+                        errorPolicy="all"
                       >
-                        <Page
-                          clearFilters={clearFilters}
-                          attributes={categoryData.data.attributes.edges.map(
-                            edge => edge.node
-                          )}
-                          category={categoryData.data.category}
-                          displayLoader={categoryData.loading}
-                          hasNextPage={
-                            categoryProducts.data?.products?.pageInfo
-                              .hasNextPage
-                          }
-                          sortOptions={sortOptions}
-                          activeSortOption={filters.sortBy}
-                          filters={filters}
-                          products={categoryProducts.data.products}
-                          onAttributeFiltersChange={onFiltersChange}
-                          onLoadMore={handleLoadMore}
-                          activeFilters={
-                            filters!.attributes
-                              ? Object.keys(filters!.attributes).length
-                              : 0
-                          }
-                          onOrder={value => {
-                            setSort(value.value);
-                          }}
-                        />
-                      </MetaWrapper>
+                        {({ data, loading }) => {
+                          return (
+                            <MetaWrapper
+                              meta={{
+                                description:
+                                  categoryData.data.category.seoDescription,
+                                title: categoryData.data.category.seoTitle,
+                                type: "product.category",
+                              }}
+                            >
+                              <Page
+                                categories={data.categories}
+                                clearFilters={clearFilters}
+                                attributes={categoryData.data.attributes.edges.map(
+                                  edge => edge.node
+                                )}
+                                category={categoryData.data.category}
+                                displayLoader={categoryData.loading}
+                                hasNextPage={
+                                  categoryProducts.data?.products?.pageInfo
+                                    .hasNextPage
+                                }
+                                sortOptions={sortOptions}
+                                activeSortOption={filters.sortBy}
+                                filters={filters}
+                                products={categoryProducts.data.products}
+                                onAttributeFiltersChange={onFiltersChange}
+                                onLoadMore={handleLoadMore}
+                                activeFilters={
+                                  filters!.attributes
+                                    ? Object.keys(filters!.attributes).length
+                                    : 0
+                                }
+                                onOrder={value => {
+                                  setSort(value.value);
+                                }}
+                              />
+                            </MetaWrapper>
+                          );
+                        }}
+                      </TypedCategoryPageQuery>
                     );
                   }
 

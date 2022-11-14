@@ -76,6 +76,7 @@ export const FeatureProductFragment = gql`
     id
     name
     descriptionJson
+    storyJson
     thumbnail {
       url
       alt
@@ -145,6 +146,7 @@ export const productDetailsQuery = gql`
       ...BasicProductFields
       ...ProductPricingField
       descriptionJson
+      storyJson
       category {
         id
         name
@@ -159,6 +161,10 @@ export const productDetailsQuery = gql`
       }
       images {
         id
+        alt
+        url
+      }
+      backgroundImage {
         alt
         url
       }

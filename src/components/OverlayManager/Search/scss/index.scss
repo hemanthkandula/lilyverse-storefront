@@ -20,7 +20,7 @@ $drawer-width: 25rem;
   &__input {
     .input__icon-right {
       svg * {
-        fill: $turquoise;
+        fill: $white;
       }
     }
 
@@ -31,8 +31,8 @@ $drawer-width: 25rem;
     }
 
     .input__field {
-      background-color: $turquoise-light;
-      border: none;
+      background-color: $black;
+      border: $white;
       box-shadow: none;
       padding-bottom: 1.2rem;
       padding-top: 1.25rem;
@@ -51,7 +51,7 @@ $drawer-width: 25rem;
   }
 
   &__products {
-    background: $white;
+    background: $black;
     overflow: auto;
     padding: $spacer / 2 0;
     position: relative;
@@ -99,7 +99,7 @@ $drawer-width: 25rem;
       }
 
       &:hover {
-        background-color: $gray-light;
+        background-color: $gray-dark;
       }
 
       ul {

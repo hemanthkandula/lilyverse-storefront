@@ -271,6 +271,7 @@ export interface FeaturedProducts_shop_homepageCollection_products_edges_node {
   id: string;
   name: string;
   descriptionJson: any;
+  storyJson: any;
   /**
    * The main thumbnail for a product.
    */

@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
+  background-color: #000000;
+  padding-top: ${props => props.theme.spacing.fieldSpacer};
 
   box-shadow: 6px 0px 30px rgba(0, 0, 0, 0.15);
 `;

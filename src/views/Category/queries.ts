@@ -10,6 +10,7 @@ import {
   CategoryProducts,
   CategoryProductsVariables,
 } from "./gqlTypes/CategoryProducts";
+import { CategoryList } from "./gqlTypes/CategoryList";
 
 export const categoryProductsDataQuery = gql`
   query Category($id: ID!) {
@@ -102,3 +103,22 @@ export const TypedCategoryProductsQuery = TypedQuery<
   CategoryProducts,
   CategoryProductsVariables
 >(categoryProductsQuery);
+
+export const CategoryPageQuery = gql`
+  query CategoryList {
+    categories(level: 0, first: 10) {
+      edges {
+        node {
+          id
+          name
+          backgroundImage {
+            url
+          }
+        }
+      }
+    }
+  }
+`;
+export const TypedCategoryPageQuery = TypedQuery<CategoryList, {}>(
+  CategoryPageQuery
+);

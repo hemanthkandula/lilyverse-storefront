@@ -2,7 +2,7 @@ import isEqual from "lodash/isEqual";
 import * as React from "react";
 
 import { Thumbnail } from "@components/molecules";
-import * as S from "@components/molecules/ProdMainAttrs/styles";
+// import * as S from "@components/molecules/ProdMainAttrs/styles";
 
 import { TaxedMoney } from "../../@next/components/containers";
 import { FeaturedProducts_shop_homepageCollection_products_edges_node } from "../ProductsFeatured/gqlTypes/FeaturedProducts";

@@ -12,6 +12,7 @@ import { RouteComponentProps, withRouter } from "react-router-dom";
 import ReactSVG from "react-svg";
 
 import { commonMessages } from "@temp/intl";
+// import { Button } from "@material-ui/core";
 
 import {
   Button,
@@ -78,6 +79,13 @@ class Search extends React.Component<SearchProps, SearchState> {
     }
 
     evt.preventDefault();
+  };
+
+  handleButtonClick = () => {
+    if (this.hasSearchPhrase && this.submitBtnRef.current) {
+      this.props.overlay.hide();
+      this.props.history.push(`${searchUrl}?${this.searchQs}`);
+    }
   };
 
   handleInputBlur = () => {
@@ -156,6 +164,16 @@ class Search extends React.Component<SearchProps, SearchState> {
                                   >
                                     <FormattedMessage defaultMessage="Show all results" />
                                   </Button>
+
+                                  // <Button
+                                  //   variant="outlined"
+                                  //   size="large"
+                                  //   onClick={this.handleButtonClick}
+                                  //   color="inherit"
+                                  //   fullWidth
+                                  // >
+                                  //   <FormattedMessage defaultMessage="Show all results" />
+                                  // </Button>
                                 )}
                               </div>
                             </>

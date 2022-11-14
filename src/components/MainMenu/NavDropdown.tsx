@@ -4,7 +4,7 @@ import classNames from "classnames";
 import * as React from "react";
 
 import {
-  NavLink,
+  // NavLink,
   OverlayContextInterface,
   OverlayTheme,
   OverlayType,
@@ -56,22 +56,22 @@ class NavDropdown extends React.PureComponent<
         <li>
           <NavItem {...this.props} />
         </li>
-        {/*<li*/}
-        {/*  className={classNames({*/}
-        {/*    "main-menu__nav-dropdown__body": true,*/}
-        {/*    "main-menu__nav-dropdown__body--visible": showDropDown,*/}
-        {/*  })}*/}
-        {/*>*/}
-        {/*  <ul>*/}
-        {/*    {children.map((subItem, i) => (*/}
-        {/*      <NavItem*/}
-        {/*        key={i}*/}
-        {/*        hideOverlay={this.hideOverlayHandler}*/}
-        {/*        {...subItem}*/}
-        {/*      />*/}
-        {/*    ))}*/}
-        {/*  </ul>*/}
-        {/*</li>*/}
+        {/* <li */}
+        {/*  className={classNames({ */}
+        {/*    "main-menu__nav-dropdown__body": true, */}
+        {/*    "main-menu__nav-dropdown__body--visible": showDropDown, */}
+        {/*  })} */}
+        {/* > */}
+        {/*  <ul> */}
+        {/*    {children.map((subItem, i) => ( */}
+        {/*      <NavItem */}
+        {/*        key={i} */}
+        {/*        hideOverlay={this.hideOverlayHandler} */}
+        {/*        {...subItem} */}
+        {/*      /> */}
+        {/*    ))} */}
+        {/*  </ul> */}
+        {/* </li> */}
       </ul>
     );
   }

@@ -9,6 +9,8 @@ body {
   font-size: $base-font-size;
   line-height: $base-line-height;
   color: $base-font-color;
+  //color: $white ;
+  background-color: $black;
   overflow-x: hidden;
   margin-right: calc(-1 * (100vw - 100%));
 
@@ -53,7 +55,8 @@ body {
     min-height: 100vh;
     flex-direction: column;
     color: $base-font-color;
-
+    //color: $black;
+    background-color: $black;
     & > div:first-of-type {
       flex: 1;
     }

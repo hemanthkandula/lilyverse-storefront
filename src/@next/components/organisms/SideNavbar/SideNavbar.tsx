@@ -4,8 +4,9 @@ import { Transition } from "react-transition-group";
 
 import { Icon } from "@components/atoms";
 import { largeScreen } from "@styles/constants";
-import LogoSmall from "images/logo-small.svg";
 
+import { Link } from "react-router-dom";
+import * as appPaths from "@temp/app/routes";
 import { Overlay } from "..";
 import * as S from "./styles";
 import { IProps, IState } from "./types";
@@ -82,7 +83,13 @@ export const SideNavbar: React.FC<IProps> = ({
       <S.Wrapper>
         <S.Menu>
           <TopBar onHide={handleHide}>
-            <S.LogoWrapper path={LogoSmall} />
+            <div className="main-menu__center">
+              <Link to={appPaths.baseUrl}>
+                {/* <ReactSVG path={logoImg}  /> */}
+                {/* <img src={logoImg} alt="logo" /> */}
+                <span className="main-menu__center_reg">Lilyverse</span>
+              </Link>
+            </div>
           </TopBar>
           <S.Link to="/">Home</S.Link>
           {items.map((item, index) =>

@@ -3,7 +3,7 @@
   "version": "2.11.0",
   "private": true,
   "author": "Mirumee",
-  "homepage": "https://getsaleor.com/",
+  "homepage": "",
   "main": "dist/index.js",
   "browserslist": "last 2 versions",
   "dependencies": {
